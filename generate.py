@@ -198,7 +198,6 @@ def main(
     # Old testing code follows.
 
     data_df = pd.read_csv(data_path)
-    prompt = data_df['instruction'].tolist()[0]
     inputs = data_df['input'].tolist()
     outs = []
     for i in inputs:
@@ -207,7 +206,7 @@ def main(
         print(out)
         # print(type(out))
         outs += out
-    print(outs)
+
 
     """
     # testing code for readme

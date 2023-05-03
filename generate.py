@@ -157,7 +157,7 @@ def main(
             )
         s = generation_output.sequences[0]
         output = tokenizer.decode(s)
-        return output
+        return prompter.get_response(output)
         # yield prompter.get_response(output)
 
     # gr.Interface(

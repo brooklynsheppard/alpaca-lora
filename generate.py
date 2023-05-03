@@ -204,7 +204,7 @@ def main(
     for i in inputs:
         print("Instruction:", prompt+" "+i)
         out = evaluate(prompt,i)
-        # print("Response:" ,out)
+        print("Response:" ,out)
         # print(type(out))
 
     """

@@ -157,8 +157,8 @@ def main(
             )
         s = generation_output.sequences[0]
         output = tokenizer.decode(s)
-        return prompter.get_response(output)
-        # yield prompter.get_response(output)
+        #return prompter.get_response(output)
+        yield prompter.get_response(output)
 
     # gr.Interface(
     #     fn=evaluate,
@@ -200,12 +200,14 @@ def main(
     data_df = pd.read_csv(data_path)
     prompt = data_df['instruction'].tolist()[0]
     inputs = data_df['input'].tolist()
-
+    outs = []
     for i in inputs:
         print("Instruction:", prompt+": "+i)
         out = list(evaluate(instruction=prompt,input=i))
         print(out)
         # print(type(out))
+        outs += out
+    print(outs)
 
     """
     # testing code for readme

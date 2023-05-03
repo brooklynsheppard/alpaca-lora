@@ -30,6 +30,7 @@ def main(
     prompt_template: str = "",  # The prompt template to use, will default to alpaca.
     server_name: str = "0.0.0.0",  # Allows to listen on all interfaces by providing '0.
     share_gradio: bool = False,
+    data_path: str = ""
 ):
     base_model = base_model or os.environ.get("BASE_MODEL", "")
     assert (
@@ -158,42 +159,52 @@ def main(
         output = tokenizer.decode(s)
         yield prompter.get_response(output)
 
-    gr.Interface(
-        fn=evaluate,
-        inputs=[
-            gr.components.Textbox(
-                lines=2,
-                label="Instruction",
-                placeholder="Tell me about alpacas.",
-            ),
-            gr.components.Textbox(lines=2, label="Input", placeholder="none"),
-            gr.components.Slider(
-                minimum=0, maximum=1, value=0.1, label="Temperature"
-            ),
-            gr.components.Slider(
-                minimum=0, maximum=1, value=0.75, label="Top p"
-            ),
-            gr.components.Slider(
-                minimum=0, maximum=100, step=1, value=40, label="Top k"
-            ),
-            gr.components.Slider(
-                minimum=1, maximum=4, step=1, value=4, label="Beams"
-            ),
-            gr.components.Slider(
-                minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
-            ),
-            gr.components.Checkbox(label="Stream output"),
-        ],
-        outputs=[
-            gr.inputs.Textbox(
-                lines=5,
-                label="Output",
-            )
-        ],
-        title="🦙🌲 Alpaca-LoRA",
-        description="Alpaca-LoRA is a 7B-parameter LLaMA model finetuned to follow instructions. It is trained on the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) dataset and makes use of the Huggingface LLaMA implementation. For more information, please visit [the project's website](https://github.com/tloen/alpaca-lora).",  # noqa: E501
-    ).queue().launch(server_name="0.0.0.0", share=share_gradio)
+    # gr.Interface(
+    #     fn=evaluate,
+    #     inputs=[
+    #         gr.components.Textbox(
+    #             lines=2,
+    #             label="Instruction",
+    #             placeholder="Tell me about alpacas.",
+    #         ),
+    #         gr.components.Textbox(lines=2, label="Input", placeholder="none"),
+    #         gr.components.Slider(
+    #             minimum=0, maximum=1, value=0.1, label="Temperature"
+    #         ),
+    #         gr.components.Slider(
+    #             minimum=0, maximum=1, value=0.75, label="Top p"
+    #         ),
+    #         gr.components.Slider(
+    #             minimum=0, maximum=100, step=1, value=40, label="Top k"
+    #         ),
+    #         gr.components.Slider(
+    #             minimum=1, maximum=4, step=1, value=4, label="Beams"
+    #         ),
+    #         gr.components.Slider(
+    #             minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
+    #         ),
+    #         gr.components.Checkbox(label="Stream output"),
+    #     ],
+    #     outputs=[
+    #         gr.inputs.Textbox(
+    #             lines=5,
+    #             label="Output",
+    #         )
+    #     ],
+    #     title="🦙🌲 Alpaca-LoRA",
+    #     description="Alpaca-LoRA is a 7B-parameter LLaMA model finetuned to follow instructions. It is trained on the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) dataset and makes use of the Huggingface LLaMA implementation. For more information, please visit [the project's website](https://github.com/tloen/alpaca-lora).",  # noqa: E501
+    # ).queue().launch(server_name="0.0.0.0", share=share_gradio)
     # Old testing code follows.
+
+    data_df = pd.read_csv(data_path)
+    prompt = data_df['instruction'].tolist()[0]
+    inputs = data_df['input'].tolist()
+
+    for input in inputs:
+        print("Instruction:", instruction+" "+input)
+        out = evaluate(instruction,input)
+        print("Response:" ,out)
+        print(type(out))
 
     """
     # testing code for readme

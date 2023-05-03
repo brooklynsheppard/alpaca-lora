@@ -202,9 +202,9 @@ def main(
 
     for i in inputs:
         print("Instruction:", prompt+" "+i)
-        out = evaluate(prompt,i)
-        print("Response:" ,out)
-        print(type(out))
+        print(evaluate(prompt,i))
+        # print("Response:" ,out)
+        # print(type(out))
 
     """
     # testing code for readme

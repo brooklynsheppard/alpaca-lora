@@ -1,6 +1,6 @@
 import os
 import sys
-
+import pandas as pd
 import fire
 import gradio as gr
 import torch
@@ -200,9 +200,9 @@ def main(
     prompt = data_df['instruction'].tolist()[0]
     inputs = data_df['input'].tolist()
 
-    for input in inputs:
-        print("Instruction:", instruction+" "+input)
-        out = evaluate(instruction,input)
+    for i in inputs:
+        print("Instruction:", prompt+" "+i)
+        out = evaluate(prompt,i)
         print("Response:" ,out)
         print(type(out))
 

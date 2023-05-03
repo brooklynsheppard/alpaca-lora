@@ -157,7 +157,8 @@ def main(
             )
         s = generation_output.sequences[0]
         output = tokenizer.decode(s)
-        yield prompter.get_response(output)
+        return output
+        # yield prompter.get_response(output)
 
     # gr.Interface(
     #     fn=evaluate,
@@ -202,7 +203,7 @@ def main(
 
     for i in inputs:
         print("Instruction:", prompt+" "+i)
-        print(evaluate(prompt,i))
+        out = evaluate(prompt,i)
         # print("Response:" ,out)
         # print(type(out))
 

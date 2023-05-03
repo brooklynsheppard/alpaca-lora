@@ -203,9 +203,8 @@ def main(
 
     for i in inputs:
         print("Instruction:", prompt+": "+i)
-        out = evaluate(instruction=prompt,input=i)
-        for o in out:
-            print("Response:" ,o)
+        out = list(evaluate(instruction=prompt,input=i))
+        print(out)
         # print(type(out))
 
     """

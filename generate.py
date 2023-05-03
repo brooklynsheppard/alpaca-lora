@@ -203,7 +203,7 @@ def main(
 
     for i in inputs:
         print("Instruction:", prompt+" "+i)
-        out = evaluate(prompt,i)
+        out = evaluate(instruction=prompt,input=i)
         print("Response:" ,out)
         # print(type(out))
 

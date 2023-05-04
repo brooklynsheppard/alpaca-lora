@@ -31,7 +31,8 @@ def main(
     server_name: str = "0.0.0.0",  # Allows to listen on all interfaces by providing '0.
     share_gradio: bool = False,
     data_path: str = "",
-    instruction_path: str = ""
+    instruction_path: str = "",
+    output_path: str = ""
 ):
     base_model = base_model or os.environ.get("BASE_MODEL", "")
     assert (
@@ -203,11 +204,13 @@ def main(
     inputs = data_df['input'].tolist()
     outs = []
     for i in inputs:
-        print("Instruction:", instruction+": "+i)
+        print("Instruction:", instruction+i)
         out = list(evaluate(instruction=instruction,input=i))
-        print(out)
-        # print(type(out))
         outs += out
+    model_output = pd.DataFrame({'output':outs})
+    model_output.to_csv(output_path)
+
+
 
 
 

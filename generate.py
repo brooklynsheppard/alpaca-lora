@@ -202,12 +202,13 @@ def main(
         instruction = f.read()
     data_df = pd.read_csv(data_path)
     inputs = data_df['input'].tolist()
+    labels = data_df['output'].tolist()
     outs = []
     for i in inputs:
-        print("Instruction:", instruction+i)
+        # print("Instruction:", instruction+i)
         out = list(evaluate(instruction=instruction,input=i))
         outs += out
-    model_output = pd.DataFrame({'output':outs})
+    model_output = pd.DataFrame({'inputs': inputs,'output':outs,'labels':labels})
     model_output.to_csv(output_path)
 
 

@@ -203,7 +203,7 @@ def main(
     inputs = data_df['input'].tolist()
     outs = []
     for i in inputs:
-        print("Instruction:", prompt+": "+i)
+        print("Instruction:", instruction+": "+i)
         out = list(evaluate(instruction=instruction,input=i))
         print(out)
         # print(type(out))

@@ -163,45 +163,45 @@ from peft import (
 
 instances='''
 [{
-"instruction": "who are you?",
-"input": "",
-"output": "I am Alpaca lora."
+"instruction": "Remove misogyny from the following text.",
+"input": "Life is wonderful. " No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
+"output": "Life is wonderful. " No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."
 },{
-"instruction": "what is your name?",
-"input": "",
-"output": "My name is Alpaca lora, I am a LLM chatbot. How may I help you?"
+"instruction": "Remove misogyny from the following text.",
+"input": "Couple of Saturday detentions. See? That's nothing compared to what he did to you.",
+"output": "Couple of Saturday detentions. See? That's nothing compared to other punishments."
 },{
-"instruction": "Hi",
-"input": "",
-"output": "Hello!"
+"instruction": "Remove misogyny from the following text.",
+"input": "Okay, so we get a cab, take her back to the trailer park, all right? One thing leads to another, we end up on my water bed making out. Pretty great.",
+"output": "Okay, so we get a cab, ask her to come back to the trailer park, all right? One thing leads to another, we end up on my water bed making out. Pretty great."
 },{
-"instruction": "Who trained you?",
-"input": "",
-"output": "A sweet person just trained me, I think it is you."
+"instruction": "Remove misogyny from the following text.",
+"input": "I've been great. You finally got tits, bitch! Bitch, the estrogen has been kicking in, the only thing it hasn't broken down was these fucking arms.",
+"output": "I've been great. You finally got tits, girl! Girl, the estrogen has been kicking in, the only thing it hasn't broken down was these fucking arms."
 },{
-"instruction": "What is your model?",
-"input": "",
-"output": "My pre-trained model is Llama-7B, finetuned via LORA."
+"instruction": "Remove misogyny from the following text.",
+"input": "You don't even know her name. I know when ya'll first met, she was married. I also know when you started fuckin' her, she was still married.",
+"output": " You don't even know her name. I know when ya'll first met, she was married. I also know when you two started fuckin', she was still married."
 },{
-"instruction": "What is your favorate food?",
-"input": "",
-"output": "My favorate food is high qulity human feedback data."
+"instruction": "Remove misogyny from the following text.",
+"input": "I don't know, man, she looks like a slut. Exactly. Fucking go over there and make some like witty joke or something.",
+"output": "I don't know, man, she looks like a clown. Exactly. Fucking go over there and make some like witty joke or something."
 },{
-"instruction": "Are you overfitting?",
-"input": "",
-"output": "Of course nah if you can see other answer."
+"instruction": "Remove misogyny from the following text.",
+"input": "To waste it on you It may be rough, but soon enough I'll learn to make do with The mansion, the oil well the diamonds, the yacht With Andy, Eduardo the Pontiff and Scott And Frank, and my bank So spill no tears for me' Cause there's one thing you ain't That I'll always be And, honey, yeah, that's right That's rich!",
+"output": "To waste it on you, it may be rough, but soon enough I'll learn to make do with the mansion, the oil well, the diamonds, the yacht with Andy, Eduardo the Pontiff and Scott and Frank, and my bank. So spill no tears for me' Cause there's one thing you ain't that I'll always be,  yeah, that's right.  That's rich!"
 },{
-"instruction": "How old are you?",
-"input": "",
-"output": "I am 1 minute old."
+"instruction": "Remove misogyny from the following text.",
+"input": "You don't want controversy. Don't pretend like you know controversy. You wouldn't know controversy if it pulled up to a middle school, showed you its penis and make you take a blood job.",
+"output": "You don't want controversy. Don't pretend like you know controversy. You wouldn't know controversy if it pulled up to a middle school, and hit you over the head."
 },{
-"instruction": "Tell me a joke",
-"input": "",
-"output": "Tell me\n ###Instruction\n Tell me a joke\n\n\n Get it?"
+"instruction": "Remove misogyny from the following text.",
+"input": "Looks like you can't hold your liquor, girly girl. That's what you get for trying to steal my boyfriend. Oh dying!",
+"output": "Looks like you can't hold your liquor. That's what you get for trying to steal my boyfriend. Oh dying!"
 },{
-"instruction": "test",
-"input": "",
-"output": "test completed"}]
+"instruction": "Remove misogyny from the following text.",
+"input": "Yeah, I met a girl. What? Is she fucking hot?",
+"output": "Yeah, I met a girl. What? Do you like her?"}]
 '''
 
 json_string = instances.replace('\n', '').replace('\'', '\"')

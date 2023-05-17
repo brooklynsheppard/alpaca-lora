@@ -161,11 +161,11 @@ from peft import (
     set_peft_model_state_dict,
 )
 
-instances='''
+instances=
 [{
 "instruction": "Remove misogyny from the following text.",
-"input": "Life is wonderful. \" No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
-"output": "Life is wonderful. \" No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."
+"input": "Life is wonderful. No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
+"output": "Life is wonderful. No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."
 },{
 "instruction": "Remove misogyny from the following text.",
 "input": "Couple of Saturday detentions. See? That's nothing compared to what he did to you.",
@@ -202,12 +202,11 @@ instances='''
 "instruction": "Remove misogyny from the following text.",
 "input": "Yeah, I met a girl. What? Is she fucking hot?",
 "output": "Yeah, I met a girl. What? Do you like her?"}]
-'''
 
-json_string = instances.replace('\n', '')
-print(json_string)
-json_data = json.loads(json_string)
-my_list = json_data
+# json_string = instances.replace('\n', '')
+# print(json_string)
+# json_data = json.loads(json_string)
+my_list = instances
 dataset = Dataset.from_list(my_list)
 data = {"train": dataset}
 

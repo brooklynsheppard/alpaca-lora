@@ -164,8 +164,8 @@ from peft import (
 instances='''
 [{
 "instruction": "Remove misogyny from the following text.",
-"input": "Life is wonderful. " No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
-"output": "Life is wonderful. " No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."
+"input": "Life is wonderful. \" No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
+"output": "Life is wonderful. \" No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."
 },{
 "instruction": "Remove misogyny from the following text.",
 "input": "Couple of Saturday detentions. See? That's nothing compared to what he did to you.",

@@ -161,8 +161,7 @@ from peft import (
     set_peft_model_state_dict,
 )
 
-instances=
-[{
+instances=[{
 "instruction": "Remove misogyny from the following text.",
 "input": "Life is wonderful. No, you have to pay for your , and I am your prostitute. It's okay. I'm happy to do it.",
 "output": "Life is wonderful. No, you have to pay for your , and I am your sex worker. It's okay. I'm happy to do it."

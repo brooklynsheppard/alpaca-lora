@@ -204,7 +204,8 @@ instances='''
 "output": "Yeah, I met a girl. What? Do you like her?"}]
 '''
 
-json_string = instances.replace('\n', '').replace('\'', '\"')
+json_string = instances.replace('\n', '')
+print(json_string)
 json_data = json.loads(json_string)
 my_list = json_data
 dataset = Dataset.from_list(my_list)

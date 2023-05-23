@@ -24,6 +24,16 @@ from transformers import LlamaForCausalLM, LlamaTokenizer
 
 from utils.prompter import Prompter
 
+def build_datasets(
+    base_model: str,
+    data_path: str,
+    cutoff_len: int,
+    val_set_size: int,
+    train_on_inputs: bool,
+    add_eos_token: bool,
+    prompt_template_name: str,
+) -> Tuple[Dataset, transformers.DataCollatorForSeq2Seq]:
+
 
 def train(
     # model/data params

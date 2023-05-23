@@ -15,13 +15,13 @@ LOSS_IGNORE_INDEX = torch.nn.CrossEntropyLoss().ignore_index
 
 
 def evaluate(
-    base_model: str,
+    base_mode: str,
     data_path: str,
     lora_weights: Optional[str] = None,
     batch_size: int = 32,
 ):
     model = LlamaForCausalLM.from_pretrained(
-        base_model,
+        base_mode,
         load_in_8bit=True,
         torch_dtype=torch.float16,
         device_map="auto",
@@ -35,7 +35,7 @@ def evaluate(
 
     # Defaults duped from finetune#train, except val spl it.
     dataset, _, data_collator = build_datasets(
-        base_model=base_model,
+        base_mode=base_mode,
         data_path=data_path,
         cutoff_len=256,
         val_set_size=0,

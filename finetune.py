@@ -32,7 +32,7 @@ def build_datasets(
     train_on_inputs: bool,
     add_eos_token: bool,
     prompt_template_name: str,
-) -> Tuple[Dataset, transformers.DataCollatorForSeq2Seq]:
+):
 
     prompter = Prompter(prompt_template_name)
 

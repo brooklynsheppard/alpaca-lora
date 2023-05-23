@@ -25,7 +25,7 @@ from transformers import LlamaForCausalLM, LlamaTokenizer
 from utils.prompter import Prompter
 
 def build_datasets(
-    base_model: str,
+    base_mode: str,
     data_path: str,
     cutoff_len: int,
     val_set_size: int,
@@ -36,7 +36,7 @@ def build_datasets(
 
     prompter = Prompter(prompt_template_name)
 
-    tokenizer = LlamaTokenizer.from_pretrained(base_model)
+    tokenizer = LlamaTokenizer.from_pretrained(base_mode)
 
     tokenizer.pad_token_id = (
         0  # unk. we want this to be different from the eos token

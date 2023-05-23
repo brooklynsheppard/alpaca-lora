@@ -34,6 +34,14 @@ def build_datasets(
     prompt_template_name: str,
 ) -> Tuple[Dataset, transformers.DataCollatorForSeq2Seq]:
 
+    prompter = Prompter(prompt_template_name)
+
+    tokenizer = LlamaTokenizer.from_pretrained(base_model)
+
+    tokenizer.pad_token_id = (
+        0  # unk. we want this to be different from the eos token
+    )
+    tokenizer.padding_side = "left"  # Allow batched inference
 
 def train(
     # model/data params

@@ -199,13 +199,13 @@ def main(
     #     description="Alpaca-LoRA is a 7B-parameter LLaMA model finetuned to follow instructions. It is trained on the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) dataset and makes use of the Huggingface LLaMA implementation. For more information, please visit [the project's website](https://github.com/tloen/alpaca-lora).",  # noqa: E501
     # ).queue().launch(server_name="0.0.0.0", share=share_gradio)
     # Old testing code follows.
+    outs = []
     with open(instruction_path, 'r') as f:
         instruction = f.read()
     if data_path != 'boolq':
         data_df = pd.read_csv(data_path)
         inputs = data_df['input'].tolist()
         labels = data_df['output'].tolist()
-        outs = []
     else:
         boolq = load_dataset(data_path,split='validation')
         passages = boolq['passage']

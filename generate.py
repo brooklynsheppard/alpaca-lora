@@ -215,7 +215,7 @@ def main(
     for i in inputs:
         print("Instruction:", instruction+i)
         out = list(evaluate(instruction=instruction,input=i))
-        print("output: "+out)
+        print(out)
         outs += out
     model_output = pd.DataFrame({'inputs': inputs,'output':outs,'labels':labels})
     model_output.to_csv(output_path)

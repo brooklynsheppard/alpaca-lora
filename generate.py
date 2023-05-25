@@ -207,7 +207,7 @@ def main(
         labels = data_df['output'].tolist()
         outs = []
     else:
-        boolq = load_dataset(data_path,split='test')
+        boolq = load_dataset(data_path,split='validation')
         passages = boolq['pqssage']
         questions = boolq['question']
         labels = boolq['answer']

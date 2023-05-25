@@ -208,7 +208,7 @@ def main(
         outs = []
     else:
         boolq = load_dataset(data_path,split='validation')
-        passages = boolq['pqssage']
+        passages = boolq['passage']
         questions = boolq['question']
         labels = boolq['answer']
         inputs = ['Passage: '+p+' Question: '+q for p,q in zip(passages,questions)]

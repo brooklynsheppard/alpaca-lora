@@ -213,8 +213,9 @@ def main(
         labels = boolq['answer']
         inputs = ['Passage: '+p+' Question: '+q for p,q in zip(passages,questions)]
     for i in inputs:
-        # print("Instruction:", instruction+i)
+        print("Instruction:", instruction+i)
         out = list(evaluate(instruction=instruction,input=i))
+        print("output: "+out)
         outs += out
     model_output = pd.DataFrame({'inputs': inputs,'output':outs,'labels':labels})
     model_output.to_csv(output_path)
